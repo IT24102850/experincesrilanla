@@ -56,4 +56,68 @@ document.addEventListener('DOMContentLoaded', function(){
       }catch(e){/* ignore */}
     }
   }
+
+  /* ===== Theme toggle & dynamic luxury stylesheet loader ===== */
+  (function(){
+    var THEME_KEY = 'siteTheme';
+    var luxuryId = 'luxury-theme-css';
+
+    function loadLuxuryStylesheet(){
+      if(document.getElementById(luxuryId)) return;
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'css/theme-luxury.css';
+      link.id = luxuryId;
+      document.head.appendChild(link);
+    }
+
+    function unloadLuxuryStylesheet(){
+      var el = document.getElementById(luxuryId);
+      if(el) el.parentNode.removeChild(el);
+    }
+
+    function applyTheme(name){
+      if(name === 'luxury'){
+        loadLuxuryStylesheet();
+        document.documentElement.classList.add('theme-luxury');
+      } else {
+        unloadLuxuryStylesheet();
+        document.documentElement.classList.remove('theme-luxury');
+      }
+      try{ localStorage.setItem(THEME_KEY, name); } catch(e){}
+      updateToggleUI(name);
+    }
+
+    function updateToggleUI(name){
+      var btn = document.querySelector('.theme-toggle');
+      if(!btn) return;
+      btn.setAttribute('aria-pressed', name === 'luxury' ? 'true' : 'false');
+      btn.title = name === 'luxury' ? 'Switch to comfort theme' : 'Switch to luxury theme';
+      btn.innerHTML = name === 'luxury' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    }
+
+    // Inject a small toggle into the header if present
+    var header = document.querySelector('.header-container');
+    if(header){
+      var toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'theme-toggle';
+      toggle.setAttribute('aria-label', 'Toggle theme');
+      toggle.setAttribute('aria-pressed', 'false');
+      toggle.innerHTML = '<i class="fas fa-moon"></i>';
+      toggle.addEventListener('click', function(){
+        var current = null;
+        try { current = localStorage.getItem(THEME_KEY); } catch(e){}
+        var next = current === 'luxury' ? 'comfort' : 'luxury';
+        applyTheme(next);
+      });
+      header.appendChild(toggle);
+    }
+
+    // Initialize based on stored preference (or default to comfort)
+    try{
+      var stored = localStorage.getItem(THEME_KEY) || 'comfort';
+      applyTheme(stored);
+    }catch(e){ applyTheme('comfort'); }
+  })();
 });

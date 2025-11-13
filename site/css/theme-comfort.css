@@ -179,6 +179,11 @@ ul { list-style: none; }
 .slogan { font-size: 0.75rem; color: var(--slate-gray); margin-bottom: 0; letter-spacing: 1px; }
 .nav-toggle { display: none; flex-direction: column; justify-content: center; align-items: center; width: 40px; height: 40px; background: transparent; border: 1px solid rgba(212, 175, 55, 0.12); border-radius: var(--radius-sm); cursor: pointer; padding: 0; transition: var(--transition); }
 .nav-toggle:hover { border-color: var(--gold-premium); }
+
+/* Theme toggle button (small header control injected by JS) */
+.theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin-left: 0.5rem; background: transparent; border: 1px solid rgba(14,111,115,0.06); border-radius: var(--radius-sm); cursor: pointer; color: var(--text-primary); transition: var(--transition); }
+.theme-toggle:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); border-color: rgba(212,175,55,0.12); }
+
 .hamburger { display: block; width: 20px; height: 2px; background: var(--gold-premium); position: relative; transition: var(--transition); }
 .hamburger::before, .hamburger::after { content: ''; position: absolute; width: 20px; height: 2px; background: var(--gold-premium); transition: var(--transition); }
 .hamburger::before { top: -6px; }

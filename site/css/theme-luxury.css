@@ -1,0 +1,58 @@
+/* Theme Luxury — "Luxury Tropical Heritage" dark theme
+   Use: dynamically loaded by JS when user selects the luxury theme.
+*/
+
+/* Core tokens (will override comfort theme variables when this file is loaded) */
+:root {
+  --bg-primary: #0A0F0F; /* Luxury Deep Black */
+  --bg-elev: rgba(10,15,15,0.72);
+  --card-bg: rgba(18,22,22,0.56);
+  --text-primary: #F2F2F2; /* Mist White */
+  --text-secondary: #CFC7BC; /* Sand beige tint */
+  --accent-primary: #D4AF37; /* Royal Ceylon Gold */
+  --accent-secondary: #0FB8B8; /* Tropical Teal Glow */
+  --muted: #9BA1A8; /* Elephant Grey */
+  --container-max: 1200px;
+  --header-height: 72px;
+  --radius-sm: 10px;
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.6);
+  --shadow-accent: 0 8px 30px rgba(212,175,55,0.12);
+  --transition: 180ms cubic-bezier(.22,.9,.32,1);
+}
+
+/* Base page background */
+html, body { background: linear-gradient(180deg, #070909 0%, #0b1212 100%); color: var(--text-primary); }
+
+/* Header overrides */
+.site-header { background: linear-gradient(180deg, rgba(10,15,15,0.6), rgba(10,15,15,0.45)); border-bottom: 1px solid rgba(212,175,55,0.06); backdrop-filter: blur(6px); }
+.site-header.scrolled { background: rgba(10,15,15,0.9); box-shadow: var(--shadow-md); }
+
+/* Buttons */
+.btn.primary { background: linear-gradient(90deg, var(--accent-primary), #b8872b); color: #0A0F0F; box-shadow: var(--shadow-accent); }
+.btn.secondary { background: transparent; color: var(--accent-secondary); border: 1.5px solid rgba(15,184,184,0.12); box-shadow: 0 6px 18px rgba(15,184,184,0.02); }
+
+/* Cards and panels */
+.card, .tour.card, .vehicle.card, .experience.card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.18)); border: 1px solid rgba(212,175,55,0.06); box-shadow: 0 6px 30px rgba(0,0,0,0.55); border-radius: var(--radius-sm); }
+.card .card-badge { background: linear-gradient(90deg, rgba(212,175,55,0.12), rgba(15,184,184,0.06)); color: var(--text-primary); }
+
+/* Hero */
+.hero { color: var(--text-primary); }
+.hero .lead { color: var(--text-secondary); }
+
+/* Links */
+a { color: var(--accent-secondary); }
+
+/* Footer */
+.site-footer { background: #060808; color: var(--muted); border-top: 1px solid rgba(212,175,55,0.03); }
+
+/* Carousel & indicators */
+.carousel-btn { background: rgba(255,255,255,0.04); color: var(--text-primary); border: 1px solid rgba(255,255,255,0.02); }
+
+/* Small helper for luxury-specific glow accents */
+.glow-gold { box-shadow: 0 8px 30px rgba(212,175,55,0.14); }
+
+/* Ensure things remain legible on dark */
+.muted, .micro { color: var(--text-secondary); }
+
+/* Theme toggle (when theme file is loaded it can slightly tweak the toggle style) */
+.theme-toggle { background: transparent; color: var(--text-primary); border: 1px solid rgba(255,255,255,0.04); }
