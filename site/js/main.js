@@ -1,13 +1,13 @@
 // main.js — small helper for nav toggles and simple carousel
 document.addEventListener('DOMContentLoaded', function(){
-  // Nav toggles
+  // Nav toggles — toggle the .active class on the target nav so CSS handles animation/visibility
   document.querySelectorAll('.nav-toggle').forEach(function(btn){
     btn.addEventListener('click', function(){
       var targetId = btn.getAttribute('aria-controls');
       var expanded = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!expanded));
       var nav = document.getElementById(targetId);
-      if(nav){ nav.style.display = expanded ? '' : 'block'; }
+      if(nav){ nav.classList.toggle('active', !expanded); }
     });
   });
 
