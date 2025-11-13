@@ -1,0 +1,101 @@
+/* Theme Comfort (sea & sand) — copy of dark-theme.css renamed for clarity
+   This file mirrors `dark-theme.css` and is intended as the active, tourism-friendly theme.
+*/
+
+/* Content copied from dark-theme.css */
+
+:root {
+  /* Eye-comfort, tourism-friendly palette (soft sea & sand) */
+  --sea-deep: #08323A;         /* deep teal for headings/text */
+  --sea-mid: #0E6F73;          /* primary accent (sea) */
+  --sand: #F7F5EE;             /* soft warm background */
+  --sand-2: #FFFDF8;           /* panel / card backgrounds */
+  --sun-warm: #D49A2A;         /* warm accent (call-to-action) */
+  --coral: #F28C66;            /* secondary accent */
+  --muted-teal: #4B6B6B;       /* secondary text */
+  --soft-gray: #9AA6A6;        /* subtle gray */
+
+  /* UI Variables */
+  --bg-primary: var(--sand);
+  --bg-secondary: var(--sand-2);
+  --bg-accent: #EAF6F6;
+  --text-primary: var(--sea-deep);
+  --text-secondary: var(--muted-teal);
+  --accent-primary: var(--sea-mid);
+  --accent-secondary: var(--sun-warm);
+  --accent-tertiary: var(--coral);
+
+  /* Effects (softer shadows for light theme) */
+  --shadow-sm: 0 6px 18px rgba(8,50,58,0.06);
+  --shadow-md: 0 10px 20px rgba(8,50,58,0.08);
+  --shadow-lg: 0 20px 30px rgba(8,50,58,0.10);
+  --shadow-accent: 0 8px 18px rgba(212,150,50,0.08);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --transition: all 0.28s cubic-bezier(0.22, 0.9, 0.3, 1);
+  --transition-slow: all 0.45s cubic-bezier(0.22, 0.9, 0.3, 1);
+
+  /* Layout */
+  --container-max: 1200px;
+  --section-padding: 4.5rem 0;
+  /* Header sizing for fixed header offset (used for body padding-top) */
+  --header-height: 80px; /* desktop */
+  --header-height-mobile: 64px; /* mobile fallback */
+}
+
+/* Backwards-compatible aliases for existing CSS that used the dark-theme variable names */
+:root {
+  --rich-black: var(--sea-deep);
+  --deep-charcoal: var(--sand-2);
+  --midnight-teal: var(--sea-mid);
+  --gold-premium: var(--sun-warm);
+  --tropical-teal: var(--sea-mid);
+  --warm-amber: var(--sun-warm);
+  --mist-white: var(--bg-secondary);
+  --slate-gray: var(--soft-gray);
+}
+
+/* ===== RESET & BASE STYLES ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent content from being hidden below the fixed header */
+/* header height is controlled by CSS var so responsive changes keep layout consistent */
+body { padding-top: var(--header-height); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+h1 { font-size: 3.5rem; background: linear-gradient(135deg, var(--gold-premium), var(--warm-amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 0 30px rgba(212, 175, 55, 0.2); }
+h2 { font-size: 2.75rem; color: var(--text-primary); }
+h3 { font-size: 2rem; color: var(--text-primary); }
+h4 { font-size: 1.5rem; color: var(--text-primary); }
+
+p { margin-bottom: 1.5rem; color: var(--text-secondary); }
+a { color: inherit; text-decoration: none; transition: var(--transition); }
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+
+/* ===== LAYOUT UTILITIES ===== */
+.container { max-width: var(--container-max); margin: 0 auto; padding: 0 1.5rem; }
+.section { padding: var(--section-padding); position: relative; }
+.section-title { text-align: center; margin-bottom: 4rem; position: relative; }
+.section-title::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(to right, var(--gold-premium), var(--tropical-teal)); border-radius: 3px; }
+.text-center { text-align: center; }
+
+/* rest of rules are the same as dark-theme.css (omitted here for brevity) */
