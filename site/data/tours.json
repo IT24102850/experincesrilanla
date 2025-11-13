@@ -1,0 +1,27 @@
+[
+  {
+    "id":"classic-7",
+    "title":"Classic Sri Lanka Tour — 7 Days",
+    "destinations":["Sigiriya","Kandy","Ella","Mirissa"],
+    "price_from":899,
+    "currency":"USD",
+    "summary":"Culture, nature and beaches for first-time visitors",
+    "itinerary":["Arrive Colombo, drive to Dambulla/Sigiriya","Sigiriya Rock & Cultural village","Drive to Kandy, Temple of the Tooth","Nuwara Eliya / tea country","Scenic train to Ella","South coast beach time","Transfer to Colombo / depart"]
+  },
+  {
+    "id":"wildlife-8",
+    "title":"Wildlife & Nature Expedition — 8 Days",
+    "destinations":["Yala","Udawalawe","Horton Plains","Sinharaja"],
+    "price_from":1150,
+    "currency":"USD",
+    "summary":"Guided safaris and rainforest treks for nature lovers"
+  },
+  {
+    "id":"honeymoon-12",
+    "title":"Honeymoon in Paradise — 12 Days",
+    "destinations":["Galle","Bentota","Ella","Nuwara Eliya"],
+    "price_from":1750,
+    "currency":"USD",
+    "summary":"Romantic hotels, private dinners and scenic views"
+  }
+]

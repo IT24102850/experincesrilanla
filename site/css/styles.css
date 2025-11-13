@@ -1,0 +1,104 @@
+/* Premium, componentized styles for ExploreSriLanka.com */
+:root{
+  --deep-green: #0F3E3E;
+  --gold: #D4A017;
+  --ocean: #138A8A;
+  --sand: #F1E9D2;
+  --muted: #6b7280;
+  --bg: #ffffff;
+  --panel: #fbfbfb;
+  --max-width: 1180px;
+  --radius: 12px;
+  --shadow-sm: 0 6px 18px rgba(15,62,62,0.06);
+  --shadow-xs: 0 2px 6px rgba(15,62,62,0.04);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin:0;color:#0b1220;background:var(--bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+
+/* Utility */
+.container{max-width:var(--max-width);margin:0 auto;padding:28px 20px}
+.center{text-align:center}
+.muted{color:var(--muted)}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:transparent;border:1px solid rgba(0,0,0,0.06);color:inherit;text-decoration:none;margin:6px;font-weight:600}
+.btn.primary{background:var(--deep-green);color:var(--bg);border-color:transparent}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.12);color:#fff}
+.card{background:var(--panel);padding:18px;border-radius:calc(var(--radius) - 2px);box-shadow:var(--shadow-xs)}
+
+/* Header / Nav */
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;background:linear-gradient(180deg,var(--sand),#fff);border-bottom:1px solid rgba(0,0,0,0.04)}
+.brand-link{text-decoration:none;color:inherit}
+.site-title{margin:0;font-size:1.15rem;color:var(--deep-green)}
+.slogan{margin:0;font-size:0.9rem;color:var(--muted)}
+.nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;border:0;background:transparent}
+.hamburger{width:20px;height:2px;background:currentColor;display:inline-block;position:relative}
+.hamburger::after,.hamburger::before{content:'';position:absolute;left:0;right:0;height:2px;background:currentColor}
+.hamburger::before{top:-6px}.hamburger::after{bottom:-6px}
+.topnav{display:none}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:12px;align-items:center}
+.nav-list a{text-decoration:none;color:#143536;padding:8px 10px;border-radius:8px}
+
+@media(min-width:880px){
+  .nav-toggle{display:none}
+  .topnav{display:block}
+}
+
+/* Hero */
+.hero{position:relative;display:flex;align-items:center;justify-content:center;min-height:420px;border-radius:12px;overflow:hidden;margin:20px}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-video{width:100%;height:100%;object-fit:cover;filter:brightness(0.6)}
+.hero-content{position:relative;z-index:2;color:#fff;padding:48px;text-align:center;max-width:980px}
+.hero .lead{font-size:1.05rem;color:rgba(255,255,255,0.95);margin:12px 0}
+.cta-row{display:flex;gap:10px;justify-content:center}
+.micro{font-size:0.9rem;color:rgba(255,255,255,0.9);margin-top:12px}
+
+/* Trust strip */
+.trust-strip{padding:14px 20px;background:transparent}
+.trust-list{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.trust-item{background:linear-gradient(180deg,var(--panel),#fff);padding:10px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.03);font-weight:600}
+
+/* Cards grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.cards.grid{margin-top:12px}
+.card .card-sub{color:var(--muted);margin:8px 0}
+
+/* Feature list */
+.feature-list{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;justify-content:center}
+.feature-list li{background:var(--panel);padding:10px 14px;border-radius:10px}
+
+/* Carousel */
+.carousel{display:flex;align-items:center;gap:10px}
+.carousel-track{display:flex;overflow:hidden}
+.carousel-item{min-width:320px;padding:16px;background:var(--panel);border-radius:10px;margin:6px}
+.carousel-btn{background:rgba(0,0,0,0.06);border:0;padding:8px 12px;border-radius:8px}
+
+/* Forms */
+input,textarea,select{display:block;width:100%;margin:8px 0;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
+.planner-form{max-width:900px;margin:18px auto}
+.form-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:720px){.form-grid{grid-template-columns:repeat(2,1fr)}}
+.form-actions{display:flex;gap:10px;justify-content:center;margin-top:12px}
+
+/* Experience / Tour / Transport lists */
+.experience-grid,.vehicle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.tour{margin-bottom:16px}
+.tour-meta{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);margin:6px 0}
+.tour-actions{margin-top:12px}
+
+/* Footer */
+.site-footer{background:#fafafa;padding:28px 20px;border-top:1px solid rgba(0,0,0,0.04);margin-top:36px}
+
+/* Small screens tweaks */
+@media(max-width:879px){.container{padding:16px}}
+
+/* Accessibility helpers */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;width:auto;height:auto;left:16px;top:12px;background:#fff;padding:8px;border-radius:6px}
+
+/* Minor utilities */
+.lede{font-size:1.02rem;color:#243238}
+

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Trip Planner — Explore Sri Lanka</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a href="index.html" class="brand-link"><h1 class="site-title">ExploreSriLanka.com</h1></a></div>
+    <button id="navTogglePlanner" class="nav-toggle" aria-expanded="false" aria-controls="mainNavPlanner" aria-label="Open menu"><span class="hamburger"></span></button>
+    <nav id="mainNavPlanner" class="topnav" role="navigation" aria-label="Main navigation"><ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="tours.html">Tours</a></li><li><a href="trip-planner.html" aria-current="page">Trip Planner</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+  </header>
+
+  <main id="content" class="container">
+    <h2>Plan Your Dream Sri Lanka Trip</h2>
+    <p class="lede">We design your perfect, stress-free Sri Lankan adventure. Complete the form below and our travel expert will contact you within 12 hours.</p>
+
+    <form class="planner-form" id="plannerForm" action="#" method="post" aria-label="Trip planner form">
+      <div class="form-grid">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" required>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
+
+        <label for="whatsapp">WhatsApp</label>
+        <input id="whatsapp" type="text" name="whatsapp" placeholder="+44 7...">
+
+        <label for="dates">Arrival + Departure dates</label>
+        <input id="dates" type="text" name="dates" placeholder="YYYY-MM-DD to YYYY-MM-DD">
+
+        <label for="budget">Budget (USD)</label>
+        <input id="budget" type="text" name="budget" placeholder="$...">
+
+        <label for="num_travelers">Number of travelers</label>
+        <input id="num_travelers" type="number" name="num_travelers" min="1" value="2">
+
+        <label for="interests">Interests (e.g. wildlife, beaches, Ayurveda)</label>
+        <input id="interests" type="text" name="interests">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+
+      <div class="form-actions center">
+        <button class="btn primary" type="submit">Create My Trip</button>
+        <button type="button" class="btn" id="saveDraft">Save draft</button>
+      </div>
+    </form>
+
+    <section class="how-it-works card">
+      <h3>How it works</h3>
+      <ol>
+        <li>Send us your dates and preferences.</li>
+        <li>Receive a draft itinerary within 24 hours.</li>
+        <li>We refine and confirm bookings — you travel with support.</li>
+      </ol>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><p>© ExploreSriLanka.com</p></div></footer>
+</body>
+</html>
